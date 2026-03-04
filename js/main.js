@@ -343,3 +343,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ==========================================
+// WATERMARK ANIMATION
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Animasi subtle untuk watermark
+    const watermark = document.querySelector('.fixed-watermark');
+    
+    setInterval(() => {
+        watermark.style.opacity = '0.7';
+        setTimeout(() => {
+            watermark.style.opacity = '1';
+        }, 1000);
+    }, 5000);
+});
