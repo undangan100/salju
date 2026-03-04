@@ -648,3 +648,116 @@ body {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================
+   WATERMARK DESIGN BY MALIK
+   ========================================== */
+
+.watermark-designer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.watermark-designer p {
+    margin-bottom: 0.3rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.watermark-designer strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.watermark-designer a {
+    color: #25d366;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.watermark-designer a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Fixed Watermark */
+.fixed-watermark {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 998;
+    background: rgba(44, 62, 80, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.fixed-watermark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.fixed-watermark a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.fixed-watermark i {
+    color: #e74c3c;
+    font-size: 0.9rem;
+}
+
+/* Subtle Watermark in Sections */
+.section::before {
+    content: 'Design by Malik';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.7rem;
+    color: rgba(0,0,0,0.1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.section {
+    position: relative;
+}
+
+/* Mobile Responsive for Watermark */
+@media (max-width: 768px) {
+    .fixed-watermark {
+        bottom: 70px;
+        right: 10px;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .fixed-watermark a {
+        font-size: 0.75rem;
+    }
+    
+    .watermark-designer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Hide fixed watermark when music button overlaps */
+@media (max-width: 400px) {
+    .fixed-watermark {
+        bottom: 130px;
+    }
+}
+
